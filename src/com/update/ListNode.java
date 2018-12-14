@@ -1,7 +1,7 @@
 package com.update;
 
 /**
- * LeetCode 203
+ * Node节点
  */
 public class ListNode {
     public int val;
