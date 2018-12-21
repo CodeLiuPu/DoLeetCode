@@ -20,23 +20,11 @@ public class Solution {
     }
 
     public int lengthOfLastWord(String s) {
-        int lastLength = 0;
-
-        if (null == s || "".equalsIgnoreCase(s)){
-            return lastLength;
+        s = s.trim();
+        if ("".equalsIgnoreCase(s)){
+            return 0;
         }
-
         String[] strs = s.split(" ");
-
-        if (null == strs || strs.length <= 0){
-            return lastLength;
-        }
-
-        String lastString = strs[strs.length-1];
-
-        lastLength = lastString.length();
-
-
-        return lastLength;
+        return strs[strs.length-1].length();
     }
 }

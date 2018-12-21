@@ -2,8 +2,6 @@ package com.update.easy._206;
 
 import com.update.ListNode;
 
-import javax.print.attribute.standard.NumberUp;
-
 /**
  * 反转一个单链表。
 
