@@ -20,31 +20,28 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-       int[] nums = {-1,0,3,5,9,12};
-       int target = 5;
+        int[] nums = {-1, 0, 3, 5, 9, 12};
+        int target = 5;
 //               int[] nums = {5};
 //       int target = 5;
-        System.out.println(solution.search(nums,target));
+        System.out.println(solution.search(nums, target));
     }
 
     public int search(int[] nums, int target) {
         int left = 0;
-        int right = nums.length -1;
+        int right = nums.length - 1;
 
-        int middle = (left + right) / 2;
         while (left <= right) {
+            int middle = (left + right) / 2;
+
             if (nums[middle] == target) {
                 return middle;
             }
-
             if (nums[middle] < target) {
                 left = middle + 1;
-            }
-
-            if (nums[middle] > target) {
+            } else if (nums[middle] > target) {
                 right = middle - 1;
             }
-            middle = (left + right) / 2;
         }
         return -1;
     }
