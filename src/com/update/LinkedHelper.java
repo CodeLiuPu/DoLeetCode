@@ -25,9 +25,11 @@ public class LinkedHelper {
         ListNode curr = head;
         while (curr != null){
 
-            System.out.println("val = "+curr.val);
+            System.out.print(curr.val+" -> ");
             curr = curr.next;
 
         }
+        System.out.print("NULL");
+
     }
 }

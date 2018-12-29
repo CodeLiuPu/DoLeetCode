@@ -1,5 +1,6 @@
 package com.update.easy._206;
 
+import com.update.LinkedHelper;
 import com.update.ListNode;
 
 /**
@@ -15,6 +16,11 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+        int[] arr = new int[]{1,2,3,4,5,6,7};
+        ListNode node = LinkedHelper.createLinkedList(arr);
+
+//        LinkedHelper.printLinkedList(node);
+        LinkedHelper.printLinkedList(solution.reverseList(node));
 
 
     }
