@@ -29,7 +29,7 @@ public class LinkedHelper {
             curr = curr.next;
 
         }
-        System.out.print("NULL");
+        System.out.println("NULL");
 
     }
 }
