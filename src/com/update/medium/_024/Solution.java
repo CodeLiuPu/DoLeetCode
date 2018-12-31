@@ -1,4 +1,4 @@
-package com.update.easy._024;
+package com.update.medium._024;
 
 import com.update.ListNode;
 
