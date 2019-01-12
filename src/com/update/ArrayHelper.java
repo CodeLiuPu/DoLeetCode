@@ -17,4 +17,11 @@ public class ArrayHelper {
             }
         }
     }
+
+    public static void swap(int[] arrs, int x, int y) {
+        int temp = arrs[x];
+        arrs[x] = arrs[y];
+        arrs[y] = temp;
+    }
+
 }
