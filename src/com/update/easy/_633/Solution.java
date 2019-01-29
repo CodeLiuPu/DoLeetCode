@@ -23,14 +23,35 @@ class Solution {
         System.out.println(solution.judgeSquareSum(c));
     }
 
+
+    // 优化版
     public boolean judgeSquareSum(int c) {
+        int i = 0, j = (int) Math.sqrt(c);
+
+        while (i <= j) {
+            int powSum = i * i + j * j;
+            if (powSum == c) {
+                return true;
+            }
+            if (powSum > c) {
+                j--;
+            } else {
+                i++;
+            }
+        }
+        return false;
+    }
+
+
+    // 最初版
+    public boolean judgeSquareSum2(int c) {
         if (1 == c) {
             return true;
         }
 
         int middle = (int) Math.sqrt(c);
         for (int i = 0; i <= middle; i++) {
-            for (int j = i ; j <= middle; j++) {
+            for (int j = i; j <= middle; j++) {
                 if (c == i * i + j * j) {
                     return true;
                 }
