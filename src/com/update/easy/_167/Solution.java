@@ -24,7 +24,30 @@ public class Solution {
         System.out.println(solution.twoSum(numbers, target));
     }
 
+    /**
+     * 双指针
+     */
     public int[] twoSum(int[] numbers, int target) {
+        int left = 0;
+        int right = numbers.length - 1;
+
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+            if (sum < target) {
+                left++;
+            } else if (sum > target) {
+                right--;
+            } else {
+                return new int[]{left + 1, right + 1};
+            }
+        }
+        return new int[]{};
+    }
+
+    /**
+     * 获取一个值 然后用二分来求剩下的那个值
+     */
+    public int[] twoSum2(int[] numbers, int target) {
         for (int i = 0; i < numbers.length; i++) {
             int temp = target - numbers[i];
             int rightIndex = binarySearch(numbers, temp, i + 1, numbers.length - 1);
