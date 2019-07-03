@@ -27,37 +27,27 @@ public class Solution {
         System.out.println(solution.reverseVowels(str));
     }
 
+    private static List<Character> letters = Arrays.asList(
+            'a', 'e', 'i', 'o', 'u',
+            'A', 'E', 'I', 'O', 'U');
+
     // 元音字母 是 aeiou
     public String reverseVowels(String s) {
         int left = 0;
         int right = s.length() - 1;
-        List<Character> letters = new ArrayList<>();
-        letters.add('a');
-        letters.add('e');
-        letters.add('i');
-        letters.add('o');
-        letters.add('u');
-        letters.add('A');
-        letters.add('E');
-        letters.add('I');
-        letters.add('O');
-        letters.add('U');
         char[] chars = s.toCharArray();
 
         while (left < right) {
 
             if (!letters.contains(chars[left])) {
                 left++;
-                continue;
-            }
-            if (!letters.contains(chars[right])) {
+            } else if (!letters.contains(chars[right])) {
                 right--;
-                continue;
+            } else {
+                swap(chars, left, right);
+                left++;
+                right--;
             }
-
-            swap(chars,left,right);
-            left++;
-            right--;
         }
         return new String(chars);
     }
