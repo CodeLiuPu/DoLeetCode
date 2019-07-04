@@ -20,6 +20,24 @@ public class Solution {
             return false;
         }
 
+        ListNode fast = head;
+        ListNode slow = head.next;
+
+        while (fast != null && slow != null && slow.next != null) {
+            fast = fast.next;
+            slow = slow.next.next;
+            if (fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasCycle2(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
         ListNode slowNode = head;
         ListNode fastNode = head.next;
 
@@ -30,7 +48,6 @@ public class Solution {
             slowNode = slowNode.next;
             fastNode = fastNode.next.next;
         }
-
         return true;
     }
 }
