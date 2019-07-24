@@ -1,4 +1,4 @@
-package com.update.array._121;
+package com.update.greedy._121;
 
 /**
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
@@ -28,29 +28,20 @@ public class Solution {
     }
 
     public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
 
-        int minPrice = Integer.MAX_VALUE;
         int result = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minPrice){
+        int minPrice = prices[0];
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
                 minPrice = prices[i];
-            } else if(prices[i] - minPrice > result){
+            } else if (prices[i] - minPrice > result) {
                 result = prices[i] - minPrice;
             }
         }
         return result;
-    }
-
-
-    public int maxProfit2(int[] prices) {
-        int gain = 0;
-        for (int i = 0; i < prices.length - 1; i++) {
-            for (int j = i; j < prices.length; j++) {
-                int temp = prices[j] - prices[i];
-                gain = temp > gain ? temp : gain;
-            }
-        }
-
-        return gain;
     }
 }
