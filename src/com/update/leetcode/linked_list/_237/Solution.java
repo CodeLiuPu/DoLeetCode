@@ -7,6 +7,8 @@ public class Solution {
         Solution solution = new Solution();
 
     }
+
+    /// TODO 实现
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
         node.next = node.next.next;
